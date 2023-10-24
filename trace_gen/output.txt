@@ -1,0 +1,144 @@
+*** begin of the data structure ***
+t_info->uop_opcode_num 30
+t_info->uop_opcode DATAXFER
+t_info->num_read_regs: 0
+t_info->num_dest_regs: 1
+t_info->dst0: 9 : rcx
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 1
+t_info->r_dir:0
+t_info->has_st: 0
+t_info->num_ld: 0
+t_info->mem_read_size: 0
+t_info->mem_write_size: 0
+t_info->is_fp: 0
+t_info->ld_vaddr1: 0
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 0
+t_info->instruction_addr: 400001
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
+*** begin of the data structure ***
+t_info->uop_opcode_num 30
+t_info->uop_opcode DATAXFER
+t_info->num_read_regs: 0
+t_info->num_dest_regs: 1
+t_info->dst0: 10 : rax
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 0
+t_info->r_dir:0
+t_info->has_st: 0
+t_info->num_ld: 1
+t_info->mem_read_size: 8
+t_info->mem_write_size: 0
+t_info->is_fp: 0
+t_info->ld_vaddr1: 0
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 0
+t_info->instruction_addr: 400002
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
+*** begin of the data structure ***
+t_info->uop_opcode_num 30
+t_info->uop_opcode DATAXFER
+t_info->num_read_regs: 0
+t_info->num_dest_regs: 1
+t_info->dst0: 7 : rbx
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 0
+t_info->r_dir:0
+t_info->has_st: 0
+t_info->num_ld: 1
+t_info->mem_read_size: 8
+t_info->mem_write_size: 0
+t_info->is_fp: 0
+t_info->ld_vaddr1: 1
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 0
+t_info->instruction_addr: 400003
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
+*** begin of the data structure ***
+t_info->uop_opcode_num 95
+t_info->uop_opcode TR_MUL
+t_info->num_read_regs: 2
+t_info->num_dest_regs: 2
+t_info->src0: 7 : rbx
+t_info->src1: 10 : rax
+t_info->dst0: 8 : rdx
+t_info->dst1: 25 : rflags
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 0
+t_info->r_dir:0
+t_info->has_st: 0
+t_info->num_ld: 0
+t_info->mem_read_size: 9
+t_info->mem_write_size: 0
+t_info->is_fp: 0
+t_info->ld_vaddr1: 0
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 0
+t_info->instruction_addr: 400004
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
+*** begin of the data structure ***
+t_info->uop_opcode_num 13
+t_info->uop_opcode BINARY
+t_info->num_read_regs: 2
+t_info->num_dest_regs: 2
+t_info->src0: 9 : rcx
+t_info->src1: 8 : rdx
+t_info->dst0: 9 : rcx
+t_info->dst1: 25 : rflags
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 0
+t_info->r_dir:0
+t_info->has_st: 0
+t_info->num_ld: 0
+t_info->mem_read_size: 9
+t_info->mem_write_size: 0
+t_info->is_fp: 0
+t_info->ld_vaddr1: 0
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 0
+t_info->instruction_addr: 400005
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
+*** begin of the data structure ***
+t_info->uop_opcode_num 30
+t_info->uop_opcode DATAXFER
+t_info->num_read_regs: 1
+t_info->num_dest_regs: 0
+t_info->src0: 9 : rcx
+t_info->cf_type: NOT_CF
+t_info->has_immediate: 0
+t_info->r_dir:0
+t_info->has_st: 1
+t_info->num_ld: 0
+t_info->mem_read_size: 9
+t_info->mem_write_size: 4
+t_info->is_fp: 0
+t_info->ld_vaddr1: 0
+t_info->ld_vaddr2: 0
+t_info->st_vaddr: 2
+t_info->instruction_addr: 400006
+t_info->branch_target: 0
+t_info->actually_taken: 0
+t_info->write_flg: 0
+*** end of the data structure ***
+
