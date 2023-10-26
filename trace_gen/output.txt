@@ -15,7 +15,7 @@ t_info->is_fp: 0
 t_info->ld_vaddr1: 0
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 0
-t_info->instruction_addr: 400001
+t_info->instruction_addr: 400004
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0
@@ -38,7 +38,7 @@ t_info->is_fp: 0
 t_info->ld_vaddr1: 0
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 0
-t_info->instruction_addr: 400002
+t_info->instruction_addr: 400008
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0
@@ -61,7 +61,7 @@ t_info->is_fp: 0
 t_info->ld_vaddr1: 1
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 0
-t_info->instruction_addr: 400003
+t_info->instruction_addr: 40000c
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0
@@ -81,13 +81,13 @@ t_info->has_immediate: 0
 t_info->r_dir:0
 t_info->has_st: 0
 t_info->num_ld: 0
-t_info->mem_read_size: 9
+t_info->mem_read_size: 0
 t_info->mem_write_size: 0
 t_info->is_fp: 0
 t_info->ld_vaddr1: 0
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 0
-t_info->instruction_addr: 400004
+t_info->instruction_addr: 400010
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0
@@ -107,13 +107,13 @@ t_info->has_immediate: 0
 t_info->r_dir:0
 t_info->has_st: 0
 t_info->num_ld: 0
-t_info->mem_read_size: 9
+t_info->mem_read_size: 0
 t_info->mem_write_size: 0
 t_info->is_fp: 0
 t_info->ld_vaddr1: 0
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 0
-t_info->instruction_addr: 400005
+t_info->instruction_addr: 400014
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0
@@ -130,13 +130,13 @@ t_info->has_immediate: 0
 t_info->r_dir:0
 t_info->has_st: 1
 t_info->num_ld: 0
-t_info->mem_read_size: 9
-t_info->mem_write_size: 4
+t_info->mem_read_size: 0
+t_info->mem_write_size: 8
 t_info->is_fp: 0
 t_info->ld_vaddr1: 0
 t_info->ld_vaddr2: 0
 t_info->st_vaddr: 2
-t_info->instruction_addr: 400006
+t_info->instruction_addr: 400018
 t_info->branch_target: 0
 t_info->actually_taken: 0
 t_info->write_flg: 0

@@ -61,7 +61,41 @@ void print_trace_info(TraceInfo* t_info, FILE* file) {
 }
 
 void write_trace_info_to_gz(TraceInfo* t_info, gzFile gzfile) {
-    gzwrite(gzfile, t_info, sizeof(TraceInfo));
+    Inst_info *info = new Inst_info;
+    info->num_read_regs = t_info->num_read_regs;
+    info->num_dest_regs = t_info->num_dest_regs;
+    
+    if (t_info->num_read_regs >= 1) {
+        info->src[0] = t_info->src0;
+        if (t_info->num_read_regs > 1) {
+            info->src[1] = t_info->src1;
+        }
+    }
+    if (t_info->num_dest_regs >= 1) {
+        info->dst[0] = t_info->dst0;
+        if (t_info->num_dest_regs > 1) {
+            info->dst[1] = t_info->dst1;
+        }
+    }
+
+    info->cf_type = 0; // hardcoded to zero since there are no control flow instructions
+    info->has_immediate = t_info->has_immediate;
+    info->opcode = t_info->uop_opcode_num;
+    info->has_st = t_info->has_st;
+    info->is_fp = t_info->is_fp;
+    info->write_flg = t_info->write_flg;
+    info->num_ld = t_info->num_ld;
+    info->size = 8;
+    info->ld_vaddr1 = t_info->ld_vaddr1;
+    info->ld_vaddr2 = t_info->ld_vaddr2;
+    info->st_vaddr = t_info->st_vaddr;
+    info->instruction_addr = t_info->instruction_addr;
+    info->branch_target = t_info->branch_target;
+    info->mem_read_size = t_info->mem_read_size;
+    info->mem_write_size = t_info->mem_write_size;
+    info->rep_dir = t_info->r_dir;
+    info->actually_taken = t_info->actually_taken;
+    gzwrite(gzfile, info, sizeof(Inst_info));
 }
 
 int main() {
@@ -102,7 +136,8 @@ int main() {
             t_info.dst0 = 9;
             t_info.has_immediate = 1;
             t_info.mem_read_size = 0;
-            t_info.instruction_addr++; // FIX
+            t_info.mem_write_size = 0;
+            t_info.instruction_addr+=4; // FIX
             print_trace_info(&t_info, outputFile);
             write_trace_info_to_gz(&t_info, gz_outputFile);
 
@@ -122,7 +157,7 @@ int main() {
                 t_info.num_ld = 1;
                 t_info.ld_vaddr1 = matrix_a_address;
                 t_info.mem_write_size = 0;
-                t_info.instruction_addr++; // FIX
+                t_info.instruction_addr+=4; // FIX
 
                 print_trace_info(&t_info, outputFile);
                 write_trace_info_to_gz(&t_info, gz_outputFile);
@@ -130,7 +165,7 @@ int main() {
                 // LOAD operation for matrix_b
                 t_info.dst0 = 7;
                 t_info.ld_vaddr1 = matrix_b_address;
-                t_info.instruction_addr++; // FIX
+                t_info.instruction_addr+=4; // FIX
                 print_trace_info(&t_info, outputFile);
                 write_trace_info_to_gz(&t_info, gz_outputFile);
 
@@ -145,8 +180,8 @@ int main() {
                 t_info.dst1 = 25;
                 t_info.num_ld = 0;
                 t_info.ld_vaddr1 = 0;
-                t_info.mem_read_size++;
-                t_info.instruction_addr++; // FIX
+                t_info.mem_read_size = 0;
+                t_info.instruction_addr+=4; // FIX
 
                 print_trace_info(&t_info, outputFile);
                 write_trace_info_to_gz(&t_info, gz_outputFile);
@@ -158,7 +193,7 @@ int main() {
                 t_info.src1 = 8;
                 t_info.dst0 = 9;
                 t_info.dst1 = 25;
-                t_info.instruction_addr++; // FIX
+                t_info.instruction_addr+=4; // FIX
                 print_trace_info(&t_info, outputFile);
                 write_trace_info_to_gz(&t_info, gz_outputFile);
             }
@@ -170,9 +205,9 @@ int main() {
             t_info.num_read_regs = 1;
             t_info.num_dest_regs = 0;
             t_info.src0 = 9;
-            t_info.mem_write_size = 4;
+            t_info.mem_write_size = 8;
             t_info.has_st = 1; 
-            t_info.instruction_addr++; // FIX
+            t_info.instruction_addr+=4; // FIX
             print_trace_info(&t_info, outputFile);
             write_trace_info_to_gz(&t_info, gz_outputFile);
         }
