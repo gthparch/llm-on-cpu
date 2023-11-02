@@ -8,10 +8,10 @@
 #define MEMORY_SIZE (32LL * (1LL << 30)) // size in GB, the LL denotes long long
 #define MEMORY_END (32LL * (1LL << 30))
 
-#define MATRIX_A_M 1
-#define MATRIX_A_N 1
-#define MATRIX_B_M 1
-#define MATRIX_B_N 1
+#define MATRIX_A_M 10
+#define MATRIX_A_N 16
+#define MATRIX_B_M 16
+#define MATRIX_B_N 8
 
 #define RESULT_M MATRIX_A_M
 #define RESULT_N MATRIX_B_N
@@ -134,7 +134,9 @@ int main() {
             t_info.num_read_regs = 0;
             t_info.num_dest_regs = 1;
             t_info.dst0 = 9;
+            t_info.src0 = 0;
             t_info.has_immediate = 1;
+            t_info.has_st = 0;
             t_info.mem_read_size = 0;
             t_info.mem_write_size = 0;
             t_info.instruction_addr+=4; // FIX
@@ -211,6 +213,20 @@ int main() {
             print_trace_info(&t_info, outputFile);
             write_trace_info_to_gz(&t_info, gz_outputFile);
         }
+
+                // t_info.uop_opcode_num = 13;
+                // t_info.uop_opcode = "BINARY";
+                // t_info.num_read_regs = 2;
+                // t_info.num_dest_regs = 2;
+                // t_info.src0 = 9;
+                // t_info.src1 = 8;
+                // t_info.dst0 = 9;
+                // t_info.dst1 = 25;
+                // t_info.has_st = 0;
+                // t_info.mem_write_size = 0;
+                // t_info.instruction_addr+=4; // FIX
+                // print_trace_info(&t_info, outputFile);
+                // write_trace_info_to_gz(&t_info, gz_outputFile);
     }
 
     fclose(outputFile);
